@@ -1,0 +1,58 @@
+
+# --- Visual Studio / MSBuild ---
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+ipch/
+*.opendb
+
+# --- Build outputs (we use bin/ and obj/ in VS settings) ---
+bin/
+obj/
+[Bb]uild/
+out/
+x64/
+x86/
+
+# --- Compiled artifacts ---
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+*.idb
+*.obj
+*.o
+*.a
+*.lo
+*.la
+*.rsp
+*.tmp
+*.log
+*.tlog/
+
+# --- CMake (optional, if you use it) ---
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*/
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
+
+# --- Excel add-ins (future XLL builds) ---
+*.xll
+
+# --- Editors/IDEs ---
+.vscode/
+.idea/
+
+# --- Misc dumps ---
+*.dmp
