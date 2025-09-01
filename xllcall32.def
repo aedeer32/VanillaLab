@@ -1,0 +1,6 @@
+LIBRARY XLCALL32
+EXPORTS
+    Excel4
+    Excel4v
+    Excel12
+    Excel12v

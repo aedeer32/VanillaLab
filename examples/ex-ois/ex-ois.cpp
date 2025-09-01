@@ -80,3 +80,4 @@ int main() {
 
     std::cout << "New Float PV check ~ " << float_pv_check << " vs model " << sw.floating.pv(df) << "\n";
     // ここで float_pv_check と sw.floating.pv(df) は一致するはず
+}
