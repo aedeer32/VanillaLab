@@ -48,6 +48,7 @@ Testing/
 install_manifest.txt
 
 # --- Excel add-ins (future XLL builds) ---
+packages/
 *.xll
 
 # --- Editors/IDEs ---

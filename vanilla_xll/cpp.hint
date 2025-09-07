@@ -1,2 +1,0 @@
-#define VANILLAXLL_API __declspec(dllexport)
-#define VANILLAXLL_API __declspec(dllimport)
