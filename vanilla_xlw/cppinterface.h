@@ -1,8 +1,3 @@
-//
-//
-//                                                                    Test.h
-//
-
 #ifndef TEST_H
 #define TEST_H
 
@@ -15,12 +10,11 @@ using namespace xlw;
 
 //<xlw:libraryname=VanillaLib
 
-double // Adds 1 to x
-Ping(double x // argument
+double               // Year fraction between two dates under a day-count
+YC_YearFraction(
+    int y1, int m1, int d1,   // start date (YYYY,MM,DD)
+    int y2, int m2, int d2,   // end date   (YYYY,MM,DD)
+    const std::string& dc     // Allowed: ACT/360, ACT/365F, 30/360US
 );
-
-short // echoes a short
-EchoShort(short x // number to be echoed
-       );
 
 #endif

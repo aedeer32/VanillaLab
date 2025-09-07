@@ -25,17 +25,23 @@ const char* LibraryName = "VanillaLib";
 namespace
 {
 XLRegistration::Arg
-PingArgs[]=
+YC_YearFractionArgs[]=
 {
-{ "x"," argument ","B"}
+{ "y1","too lazy to comment this one ","B"},
+{ "m1","too lazy to comment this one ","B"},
+{ "d1"," start date (YYYY,MM,DD) ","B"},
+{ "y2","too lazy to comment this one ","B"},
+{ "m2","too lazy to comment this one ","B"},
+{ "d2"," end date   (YYYY,MM,DD) ","B"},
+{ "dc"," Allowed: ACT/360, ACT/365F, 30/360US ","XLF_OPER"}
 };
   XLRegistration::XLFunctionRegistrationHelper
-registerPing("xlPing",
-"Ping",
-" Adds 1 to x ",
+registerYC_YearFraction("xlYC_YearFraction",
+"YC_YearFraction",
+" Year fraction between two dates under a day-count ",
 LibraryName,
-PingArgs,
-1
+YC_YearFractionArgs,
+7
 ,false
 ,false
 ,""
@@ -51,73 +57,52 @@ PingArgs,
 extern "C"
 {
 LPXLFOPER EXCEL_EXPORT
-xlPing(
-double x)
+xlYC_YearFraction(
+double y1a,
+double m1a,
+double d1a,
+double y2a,
+double m2a,
+double d2a,
+LPXLFOPER dca)
 {
 EXCEL_BEGIN;
 
 	if (XlfExcel::Instance().IsCalledByFuncWiz())
 		return XlfOper(true);
 
+int y1(
+	static_cast<int>(y1a));
+
+int m1(
+	static_cast<int>(m1a));
+
+int d1(
+	static_cast<int>(d1a));
+
+int y2(
+	static_cast<int>(y2a));
+
+int m2(
+	static_cast<int>(m2a));
+
+int d2(
+	static_cast<int>(d2a));
+
+XlfOper dcb(
+	(dca));
+std::string dc(
+	dcb.AsString("dc"));
 
 double result(
-	Ping(
-		x)
-	);
-return XlfOper(result);
-EXCEL_END
-}
-}
-
-
-
-//////////////////////////
-
-namespace
-{
-XLRegistration::Arg
-EchoShortArgs[]=
-{
-{ "x"," number to be echoed ","XLF_OPER"}
-};
-  XLRegistration::XLFunctionRegistrationHelper
-registerEchoShort("xlEchoShort",
-"EchoShort",
-" echoes a short ",
-LibraryName,
-EchoShortArgs,
-1
-,false
-,false
-,""
-,""
-,false
-,false
-,false
-);
-}
-
-
-
-extern "C"
-{
-LPXLFOPER EXCEL_EXPORT
-xlEchoShort(
-LPXLFOPER xa)
-{
-EXCEL_BEGIN;
-
-	if (XlfExcel::Instance().IsCalledByFuncWiz())
-		return XlfOper(true);
-
-XlfOper xb(
-	(xa));
-short x(
-	xb.AsShort("x"));
-
-short result(
-	EchoShort(
-		x)
+	YC_YearFraction(
+		y1,
+		m1,
+		d1,
+		y2,
+		m2,
+		d2,
+		dc)
 	);
 return XlfOper(result);
 EXCEL_END

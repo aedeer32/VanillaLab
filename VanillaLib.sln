@@ -24,8 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		xllcall32.def = xllcall32.def
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xll_vanillalib", "xll_vanillalib\xll_vanillalib.vcxproj", "{C21B2346-5D47-4682-B40D-A90C37431E95}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vanilla_xlw", "vanilla_xlw\vanilla_xlw.vcxproj", "{D52566AD-9759-4719-AC26-BF6AD83A4A2D}"
 EndProject
 Global
@@ -92,14 +90,6 @@ Global
 		{7823B8FF-415B-40CC-ADC1-3947C91A8620}.Release|x64.Build.0 = Release|x64
 		{7823B8FF-415B-40CC-ADC1-3947C91A8620}.Release|x86.ActiveCfg = Release|Win32
 		{7823B8FF-415B-40CC-ADC1-3947C91A8620}.Release|x86.Build.0 = Release|Win32
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Debug|x64.ActiveCfg = Debug|x64
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Debug|x64.Build.0 = Debug|x64
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Debug|x86.ActiveCfg = Debug|Win32
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Debug|x86.Build.0 = Debug|Win32
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Release|x64.ActiveCfg = Release|x64
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Release|x64.Build.0 = Release|x64
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Release|x86.ActiveCfg = Release|Win32
-		{C21B2346-5D47-4682-B40D-A90C37431E95}.Release|x86.Build.0 = Release|Win32
 		{D52566AD-9759-4719-AC26-BF6AD83A4A2D}.Debug|x64.ActiveCfg = Debug|x64
 		{D52566AD-9759-4719-AC26-BF6AD83A4A2D}.Debug|x64.Build.0 = Debug|x64
 		{D52566AD-9759-4719-AC26-BF6AD83A4A2D}.Debug|x86.ActiveCfg = Debug|Win32
