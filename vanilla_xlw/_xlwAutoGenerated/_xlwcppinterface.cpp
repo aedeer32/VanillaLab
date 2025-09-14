@@ -15,7 +15,7 @@
 using namespace xlw;
 
 namespace {
-const char* LibraryName = "VanillaLib";
+const char* LibraryName = "vanilla_xlw>";
 };
 
 
@@ -29,16 +29,16 @@ YC_YearFractionArgs[]=
 {
 { "y1","too lazy to comment this one ","B"},
 { "m1","too lazy to comment this one ","B"},
-{ "d1"," start date (YYYY,MM,DD) ","B"},
+{ "d1","too lazy to comment this one ","B"},
 { "y2","too lazy to comment this one ","B"},
 { "m2","too lazy to comment this one ","B"},
-{ "d2"," end date   (YYYY,MM,DD) ","B"},
-{ "dc"," Allowed: ACT/360, ACT/365F, 30/360US ","XLF_OPER"}
+{ "d2","too lazy to comment this one ","B"},
+{ "dc","too lazy to comment this one ","XLF_OPER"}
 };
   XLRegistration::XLFunctionRegistrationHelper
 registerYC_YearFraction("xlYC_YearFraction",
 "YC_YearFraction",
-" Year fraction between two dates under a day-count ",
+"too lazy to comment this function ",
 LibraryName,
 YC_YearFractionArgs,
 7
@@ -102,6 +102,73 @@ double result(
 		y2,
 		m2,
 		d2,
+		dc)
+	);
+return XlfOper(result);
+EXCEL_END
+}
+}
+
+
+
+//////////////////////////
+
+namespace
+{
+XLRegistration::Arg
+YC_YearFractionSerialArgs[]=
+{
+{ "start_excel_serial","too lazy to comment this one ","B"},
+{ "end_excel_serial","too lazy to comment this one ","B"},
+{ "dc","too lazy to comment this one ","XLF_OPER"}
+};
+  XLRegistration::XLFunctionRegistrationHelper
+registerYC_YearFractionSerial("xlYC_YearFractionSerial",
+"YC_YearFractionSerial",
+"too lazy to comment this function ",
+LibraryName,
+YC_YearFractionSerialArgs,
+3
+,false
+,false
+,""
+,""
+,false
+,false
+,false
+);
+}
+
+
+
+extern "C"
+{
+LPXLFOPER EXCEL_EXPORT
+xlYC_YearFractionSerial(
+double start_excel_seriala,
+double end_excel_seriala,
+LPXLFOPER dca)
+{
+EXCEL_BEGIN;
+
+	if (XlfExcel::Instance().IsCalledByFuncWiz())
+		return XlfOper(true);
+
+int start_excel_serial(
+	static_cast<int>(start_excel_seriala));
+
+int end_excel_serial(
+	static_cast<int>(end_excel_seriala));
+
+XlfOper dcb(
+	(dca));
+std::string dc(
+	dcb.AsString("dc"));
+
+double result(
+	YC_YearFractionSerial(
+		start_excel_serial,
+		end_excel_serial,
 		dc)
 	);
 return XlfOper(result);

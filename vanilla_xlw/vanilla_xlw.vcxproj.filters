@@ -19,9 +19,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="vanilla_xlw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
